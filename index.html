@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Moving Alpha | seeThru | HTML5 video with alpha channel transparencies</title>
+    <link href="//fonts.googleapis.com/css?family=Lekton:400,700" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+      body {
+        font-family: Lekton, Arial, Helvetica;
+        text-align: center;
+      }
+      #wrap {
+        height: 100%;
+        width: 600px;
+        margin: auto;
+        background-color: white;
+        box-shadow: inset 5px 0 5px -5px #333, inset -5px 0 5px -5px #333;
+        background-color: #b3b3b3;
+      }
+      h1 {
+        font-size: 48px;
+        font-weight: bold;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-top: 24px;
+      }
+      h2 {
+        font-weight: normal;
+        font-size: 90%;
+        margin-top: 0px;
+      }
+      h3 {
+        font-weight: bold;
+      }
+      .demo {
+        padding: 20px 20px 20px 20px;
+        border-bottom: 1px dotted white;
+      }
+      code {
+        background-color: white;
+      }
+      #alphaToggle {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      #content {
+        border-top: 1px dotted white;
+      }
+      .button {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    </style>
+    <script type="text/javascript" src="seeThru.min.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>seeThru</h1>
+      <h2>Alpha channel transparencies for HTML5 &lt;video&gt;-elements</h2>
+      <div id="content">
+        <div class="demo">
+          <h3>Moving alpha integrated in video</h3>
+          <video onended="this.play();" autoplay loop>
+            <source src="video/kolor.webm" type="video/webm">
+              <source src="video/kolor.mp4" type="video/mp4">
+                <source src="video/kolor.ogg" type="video/ogg">
+          </video>
+          <p>with <code>seeThru.create('#video')</code> results in:</p>
+          <video autoplay loop id="movingAlphaDemo" style="display: none;">
+            <source src="video/kolor.webm" type="video/webm">
+              <source src="video/kolor.mp4" type="video/mp4">
+                <source src="video/kolor.ogg" type="video/ogg">
+          </video>
+        </div>
+      </div>
+      <script>
+        seeThru.create('#movingAlphaDemo', {
+          width: 400,
+          height: 300
+        });
+      </script>
+    </div>
+    </div>
+  </body>
+</html>
